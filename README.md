@@ -1,3 +1,3 @@
-# dev10-capstone
+# Sketchy
 
-1. Set Up Repository and Collaboration
+This is a full stack drawing game in the vein of Pictionary that allows friends to play together and chat online in real time.
