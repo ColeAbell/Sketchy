@@ -18,6 +18,7 @@ public class UserMapper implements RowMapper<User> {
         user.setPoints(resultSet.getInt("points"));
         user.setIsDrawing(resultSet.getBoolean("isDrawing"));
         user.setLastActive(resultSet.getObject("lastActive", LocalDateTime.class));
+        user.setLastDrawn(resultSet.getObject("lastDrawn", LocalDateTime.class));
         return user;
     }
 }

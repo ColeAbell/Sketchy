@@ -13,7 +13,8 @@ import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Repository
 public class RoundBoardTemplateRepository implements RoundBoardRepository {
@@ -47,7 +48,31 @@ public class RoundBoardTemplateRepository implements RoundBoardRepository {
     }
 
     @Override
-    public RoundBoard add(RoundBoard roundBoard) {
+    public RoundBoard add(RoundBoard roundBoard){
+
+        Random r = new Random();
+        int low = 10;
+        int high = 1000;
+        int result = r.nextInt(high-low) + low;
+        try{
+            TimeUnit.MILLISECONDS.sleep(result);
+        }
+        catch(InterruptedException e){
+            System.out.println("delay interrupted");
+        }
+
+        List<RoundBoard> boards = findAll();
+        if(boards.size() > 0){
+            RoundBoard latest = boards.stream().sorted(Comparator.comparing(RoundBoard::getRoundBoardId).reversed()).findFirst().get();
+            System.out.println(latest.getRoundBoardId());
+            final String allUsers = "select userId, userName, points, isDrawing, lastActive, lastDrawn "
+                    + "from User limit 1000;";
+            List<User> users = jdbcTemplate.query(allUsers, new UserMapper());
+            System.out.println(!(!users.stream().map(u -> u.getUserId()).anyMatch(u -> u == latest.getUserId()) || latest.isRoundOver() || latest.isGuessed()));
+            if(!(!users.stream().map(u -> u.getUserId()).anyMatch(u -> u == latest.getUserId()) || latest.isRoundOver() || latest.isGuessed())){
+                return roundBoard;
+            }
+        }
 
         System.out.println("attempting to add board");
         final String sql = "insert into RoundBoard (questionId, userId, guessed, victor, roundOver, startTime) "
@@ -71,6 +96,15 @@ public class RoundBoardTemplateRepository implements RoundBoardRepository {
         }
 
         roundBoard.setRoundBoardId(keyHolder.getKey().intValue());
+
+        final String userSql = "update User set "
+                + "lastDrawn = ? "
+                + "where userId = ?;";
+
+         jdbcTemplate.update(userSql,
+                LocalDateTime.now().toString(),
+                roundBoard.getUserId());
+
         return roundBoard;
     }
 

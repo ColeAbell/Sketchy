@@ -12,16 +12,21 @@ public class User {
 
     private LocalDateTime lastActive;
 
+    private LocalDateTime lastDrawn;
+
+
+
     public User() {
 
     }
 
-    public User(int userId, String userName, int points, boolean isDrawing, LocalDateTime lastActive) {
+    public User(int userId, String userName, int points, boolean isDrawing, LocalDateTime lastActive, LocalDateTime lastDrawn) {
         this.userId = userId;
         this.userName = userName;
         this.points = points;
         this.isDrawing = isDrawing;
         this.lastActive =  lastActive;
+        this.lastDrawn = lastDrawn;
     }
 
     public int getUserId() {
@@ -30,6 +35,14 @@ public class User {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public LocalDateTime getLastDrawn() {
+        return lastDrawn;
+    }
+
+    public void setLastDrawn(LocalDateTime lastDrawn) {
+        this.lastDrawn = lastDrawn;
     }
 
     public LocalDateTime getLastActive() {
@@ -69,11 +82,11 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return userId == user.userId && points == user.points && isDrawing == user.isDrawing && Objects.equals(userName, user.userName) && Objects.equals(lastActive, user.lastActive);
+        return userId == user.userId && points == user.points && isDrawing == user.isDrawing && Objects.equals(userName, user.userName) && Objects.equals(lastActive, user.lastActive) && Objects.equals(lastDrawn, user.lastDrawn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userName, points, isDrawing, lastActive);
+        return Objects.hash(userId, userName, points, isDrawing, lastActive, lastDrawn);
     }
 }

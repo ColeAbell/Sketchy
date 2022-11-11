@@ -3,7 +3,7 @@
     console.log("initializing");
     const app = document.querySelector(".app");
     const socket = io();
-    let colors = ["#fc0da1", "#4a00b5", "#43b3ae", "#abd98c", "#e600ff", "#82aa9a", "#0ebabd", "#722f37", "#fed400", "#F54D28", "#2F59A7", "#016A13", "#963D97", "#1B8751", "#CCFF00", "#4D8C57", "#00CCCC", "#C62D42", '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'];
+    let colors = ["#fc0da1", "#4a00b5", "#43b3ae", "#abd98c", "#e600ff", "#82aa9a", "#0ebabd", "#722f37", "#fed400", "#F54D28", "#2F59A7", "#016A13", "#963D97", "#1B8751", "#CCFF00", "#4D8C57", "#00CCCC", "#C62D42", '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff'];
     let randomColor = colors[Math.floor(Math.random()*colors.length)];
     let chatColor;
     let uname;
@@ -249,6 +249,7 @@
 
         const result = await fetch('http://localhost:8080/api/user', init);
         const newJson = await result.json();
+        console.log(newJson);
         id = newJson.userId;
         socket["id"] = id;
         socket["username"] = username;
@@ -267,7 +268,7 @@
         }
         app.querySelector(".join-screen").classList.remove("active");
         app.querySelector(".chat-screen").classList.add("active");
-        if(max.userId === id && checkJson.length >= 2){
+        if(max !== null && max.userId === id && checkJson.length >= 2){
             const question = await fetch(`http://localhost:8080/api/question/${max.questionId}`);
             const questionJson = await question.json();
             drawing = true;

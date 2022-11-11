@@ -24,7 +24,7 @@ public class UserTemplateRepository implements UserRepository{
 
     @Override
     public List<User> findAll() {
-        final String sql = "select userId, userName, points, isDrawing, lastActive "
+        final String sql = "select userId, userName, points, isDrawing, lastActive, lastDrawn "
                 + "from User limit 1000;";
         return jdbcTemplate.query(sql, new UserMapper());
     }
@@ -33,7 +33,7 @@ public class UserTemplateRepository implements UserRepository{
     @Transactional
     public User findById(int userId) {
 
-        final String sql = "select userId, userName, points, isDrawing, lastActive "
+        final String sql = "select userId, userName, points, isDrawing, lastActive, lastDrawn "
                 + "from User "
                 + "where userId = ?;";
 
@@ -70,13 +70,15 @@ public class UserTemplateRepository implements UserRepository{
         final String sql = "update User set "
                 + "isDrawing = ?, "
                 + "points = ?, "
-                + "lastActive = ? "
+                + "lastActive = ?, "
+                + "lastDrawn = ? "
                 + "where userId = ?;";
 
         return jdbcTemplate.update(sql,
                 user.getIsDrawing(),
                 user.getPoints(),
                 LocalDateTime.now().toString(),
+                user.getLastDrawn() == null ? user.getLastDrawn() : user.getLastDrawn().toString(),
                 user.getUserId()) > 0;
     }
 
