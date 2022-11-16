@@ -130,7 +130,7 @@ https://user-images.githubusercontent.com/67916002/202242240-7baa8f5f-9c61-4d46-
 
 First you will need to install [Node.js](https://nodejs.org/en/download/) from their site if you don't already have it on your computer.
 
-Sketchy consists of four different applications working together that each require run commands. The repo is currently designed to run on your computer's local servers, so in order to explore the multiplayer feature is is encouraged for you to use incognito windows in order to simulate multiple devices. 
+Sketchy consists of four different applications working together that each require run commands. The repo is currently designed to run on your computer's local servers, so in order to explore the multiplayer feature it is encouraged for you to use incognito windows in order to simulate multiple devices. 
 
 **Backend :**
 
