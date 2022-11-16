@@ -33,6 +33,7 @@ function Countdown() {
             let seconds = 0;
             if((newTime <= 0 || usersJson.length < 2) && max.roundOver === false){
                 console.log("time is out");
+                show = false;
                 max.roundOver = true;
                 const init = {
                     method: 'PUT',
@@ -49,6 +50,9 @@ function Countdown() {
             }
             else{
                 seconds = Math.floor(newTime / 1000);
+            }
+            if(seconds < 0){
+                seconds = 0;
             }
             console.log(show);
             console.log(usersJson.length);

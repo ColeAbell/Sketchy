@@ -69,7 +69,7 @@ function RoundBoard() {
                 </>}
                 {board.enoughUsers === false && 
                 <div className="canvas">
-                <Canvas color="#080203" mBottom="40" speed={10} txt="Need Two To Play" size="50" x={30} y={90} wide="550" bottom={40} top={40}></Canvas>
+                <Canvas color="#080203" mBottom="40" speed={15} txt="Need Two To Play" size="50" x={30} y={90} wide="550" bottom={40} top={40}></Canvas>
                 </div>}
                     
             

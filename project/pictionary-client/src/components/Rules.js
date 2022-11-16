@@ -19,12 +19,12 @@ function Rules(){
             <Canvas color="#080203" speed={5} bottom="0" top="0" high="89" x={300} y={75} wide="900" txt="RULES" size="70"></Canvas>
             <Canvas color="#080203" wide="950" speed={80} high="180" x={30} y={90} txt={ruleOne} size="35"></Canvas> 
             <Canvas color="#080203" wide="950" speed={80} high="180" x={30} y={90} txt={ruleOneTwo} size="35"></Canvas> 
-            <Canvas color="#080203" wide="950" speed={80} high="180" x={30} y={35} txt={ruleTwo} size="35"></Canvas>
-            <Canvas color="#080203" wide="950" speed={80} high="200" x={30} y={30} txt={ruleThree} size="35"></Canvas>
-            <Canvas color="#080203" wide="950" speed={90} high="230" x={30} y={60} txt={ruleFour} size="35"></Canvas>
-            <Canvas color="#080203" wide="950" speed={90} high="210" x={30} y={60} txt={ruleFive} size="35"></Canvas>
-            <Canvas color="#080203" wide="950" speed={80} high="210" x={30} y={40} txt={ruleSix} size="35"></Canvas>
-            <Canvas color="#080203" wide="950" speed={80} high="200" x={30} y={60} txt={ruleSeven} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={90} high="180" x={30} y={35} txt={ruleTwo} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={90} high="200" x={30} y={30} txt={ruleThree} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={100} high="230" x={30} y={60} txt={ruleFour} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={100} high="210" x={30} y={60} txt={ruleFive} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={90} high="210" x={30} y={40} txt={ruleSix} size="35"></Canvas>
+            <Canvas color="#080203" wide="950" speed={90} high="200" x={30} y={60} txt={ruleSeven} size="35"></Canvas>
         </div>
     )
 }
