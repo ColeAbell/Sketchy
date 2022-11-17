@@ -50,6 +50,11 @@ https://user-images.githubusercontent.com/67916002/202231075-30f34072-78f4-436f-
 
 - Non-artists can make any guesses they have inside the chat while they watch the artist at work, if they are correct the game will recognize their answer with an animation and they will be rewarded 10 points. The artist of a correctly guessed round would also recieve 5 points. A new round will automatically begin.
 
+
+
+- At the end of each round the board will clear itself
+
+
 ‎
 
 https://user-images.githubusercontent.com/67916002/202234079-d30eb819-cb17-447d-9cb3-bbb2dded0594.mp4
@@ -58,9 +63,6 @@ https://user-images.githubusercontent.com/67916002/202234079-d30eb819-cb17-447d-
 
 - If the correct answer is not guessed in time, the animated countdown will run out and a new round will automatically begin.
 
-
-
-- At the end of each round the board will clear itself
 
 ‎
 
@@ -175,7 +177,7 @@ npm start
 **WBO :**
 
 WBO is an open source API used for the drawing board. The original creator's name is Ophir Lojkine and her github can be found 
-[here](https://github.com/lovasoa/whitebophir). I made a few modifications for this implimentation including establishing communication with my backend and unlocking an administrative "clear board" feature that I used to create a method that clears the board whenever it detects the creation of a new round in the backend.
+[here](https://github.com/lovasoa/whitebophir). I made a few modifications for this implimentation including establishing communication with my backend's REST API and unlocking an administrative "clear board" feature that I used to create a method that clears the board whenever it detects the creation of a new round in the backend.
 
 **Doodle :**
 
