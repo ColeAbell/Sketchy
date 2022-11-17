@@ -132,9 +132,24 @@ First you will need to install [Node.js](https://nodejs.org/en/download/) from t
 
 Sketchy consists of four different applications working together that each require run commands (Spring backend, React frontend, full stack chatroom, and full stack sketchpad). The repo is currently designed to run on your computer's local servers, so in order to explore the multiplayer feature it is encouraged for you to use incognito windows in order to simulate multiple devices. 
 
-**Backend :**
+**MySql / Spring Backend :**
 
-Run the "Sketchy/project/pictionary" directory in you IDEA from the App file. Intellij was what I used for development.
+I chose to host the database locally with Docker during development. If you want to also implement it this way you will first need to install [Docker](https://www.docker.com/) and [MySql Workbench](https://dev.mysql.com/downloads/workbench/) respectively. 
+
+Then run the following in the terminal
+```bash
+docker run \
+--name sketchySql\
+-e MYSQL_ROOT_PASSWORD=top-secret-password \
+-p 3306:3306 \
+-d \
+mysql
+```
+Now open MySql Workbench and create a new connection on the home page via the "+" button, leave the default settings. Now open your new connection on the home page and re-enter the password used for the terminal command. 
+
+Open the sql schema from the repo found in the"Sketchy/project/pictionary/sql" directory and run it. 
+
+For the Spring backend run the "Sketchy/project/pictionary" directory in you IDEA from the App file. Intellij was what I used for development.
 
 **Chatroom :**
 
