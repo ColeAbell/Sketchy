@@ -151,7 +151,7 @@ Now open MySql Workbench and create a new connection on the home page via the "+
 
 Open the sql schema from the repo found in the"Sketchy/project/pictionary/sql" directory and run it. 
 
-For the Spring backend run the "Sketchy/project/pictionary" directory in you IDEA from the App file. Intellij was what I used for development.
+For the Spring backend run the "Sketchy/project/pictionary" directory in your IDEA from the App file. Intellij was what I used for development.
 
 **Chatroom :**
 
