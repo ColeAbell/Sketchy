@@ -88,7 +88,7 @@ https://user-images.githubusercontent.com/67916002/202242240-7baa8f5f-9c61-4d46-
 
 
 
-- If a user is inactive for a long period of time they will recieve a warning and soon after that be automatically removed from the game to help keep the game active.
+- If a user is inactive for a long period of time they will receive a warning and soon after that be automatically removed from the game to help keep the game active.
 
 ----------
 
